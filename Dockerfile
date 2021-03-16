@@ -29,7 +29,7 @@ RUN curl -LO https://open-vsx.org/api/dendron/dendron/0.33.0/file/dendron.dendro
 RUN sudo apt-get install -y default-jdk
 RUN curl -LO https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && \
     chmod +x ./lein && \
-    mv ./lein /usr/local/bin/lein
+    sudo mv ./lein /usr/local/bin/lein
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
