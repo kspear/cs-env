@@ -24,7 +24,11 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
-# RUN code-server --install-extension esbenp.prettier-vscode
+RUN code-server --install-extension dendron.dendron
+RUN sudo apt-get install -y default-jdk
+RUN curl -LO https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && \
+    chmod +x ./lein && \
+    mv ./lein /usr/local/bin/lein
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
