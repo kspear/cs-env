@@ -30,6 +30,7 @@ RUN sudo apt-get install -y default-jdk
 RUN curl -LO https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && \
     chmod +x ./lein && \
     sudo mv ./lein /usr/local/bin/lein
+RUN sudo apt install -y nodejs npm
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
