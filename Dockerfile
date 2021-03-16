@@ -24,7 +24,8 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
-RUN code-server --install-extension dendron.dendron
+RUN curl -LO https://open-vsx.org/api/dendron/dendron/0.33.0/file/dendron.dendron-0.33.0.vsix && \
+    code-server --install-extension ./dendron.dendron-0.33.0.vsix
 RUN sudo apt-get install -y default-jdk
 RUN curl -LO https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && \
     chmod +x ./lein && \
